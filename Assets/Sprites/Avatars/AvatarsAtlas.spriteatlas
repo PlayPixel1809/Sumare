@@ -1,0 +1,167 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: AvatarsAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: Android
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 29
+      m_TextureCompression: 1
+      m_CompressionQuality: 0
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 1
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    - serializedVersion: 3
+      m_BuildTarget: WebGL
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 29
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 1
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 0
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 685484b0592e76b46b9145c01817e5a0, type: 3}
+    - {fileID: 2800000, guid: e30f16939a0f6794a8013f0e1d64e593, type: 3}
+    - {fileID: 2800000, guid: 4ebc6200885798b45a1f3231f0e43042, type: 3}
+    - {fileID: 2800000, guid: ef0a285d8c12bb644b57f8074d0afd2d, type: 3}
+    - {fileID: 2800000, guid: ae0eb1fc9c67d8f4ca71346878f9c7a6, type: 3}
+    - {fileID: 2800000, guid: 2420b51fc21fb18488bf4495d19c6721, type: 3}
+    - {fileID: 2800000, guid: 4cd596825e6a48c4d8aa51c77a770ddd, type: 3}
+    - {fileID: 2800000, guid: 36a16ca674ecf6f47a7ca174a3e0b195, type: 3}
+    - {fileID: 2800000, guid: 6c9a3b85ad9766648a3bf3643da1a08a, type: 3}
+    - {fileID: 2800000, guid: 1c256b07089784e458356e52cbab7dfb, type: 3}
+    - {fileID: 2800000, guid: a5765a9deb756064a950d63293c88665, type: 3}
+    - {fileID: 2800000, guid: 8dee7fb592e338a429a37d56f17ffb13, type: 3}
+    - {fileID: 2800000, guid: 74d543e25b3f56246a94d57a88dce451, type: 3}
+    - {fileID: 2800000, guid: 4cb32895bb195294abcbdd48de2acb31, type: 3}
+    - {fileID: 2800000, guid: deb389395143ff24fab254a096a532ec, type: 3}
+    - {fileID: 2800000, guid: 70cb845120ef4cc47a56089390df1042, type: 3}
+    - {fileID: 2800000, guid: 73dd905dd6cd4564bb81c383cbff57c8, type: 3}
+    - {fileID: 2800000, guid: 8955c0efd19a79048b4ebcdcddb714c4, type: 3}
+    - {fileID: 2800000, guid: 4ad9b73cb3f553b4799d8531dccedb60, type: 3}
+    - {fileID: 2800000, guid: 1452918584772114daf5303352d405d6, type: 3}
+    - {fileID: 2800000, guid: 326f013822bbd664394b41484e553a66, type: 3}
+    - {fileID: 2800000, guid: 519bd144cd35b6e49bd42b1a8cad530e, type: 3}
+    - {fileID: 2800000, guid: 80aa2aacf2d917d45b758c4994536997, type: 3}
+    - {fileID: 2800000, guid: 7b3e8850c3cd01a478c75ad3c9e7ab5f, type: 3}
+    - {fileID: 2800000, guid: 5c8e558d67c1ae746ae4e33a30718444, type: 3}
+    - {fileID: 2800000, guid: 136845d3d90b2b84ab77dbb85145df65, type: 3}
+    - {fileID: 2800000, guid: 0a9794444dbcff149ae090fb3b903eba, type: 3}
+    - {fileID: 2800000, guid: 3892052155040fb419b76d306ed871c1, type: 3}
+    - {fileID: 2800000, guid: a0d70a7f08edd3042b9b9cfbd8b5c88f, type: 3}
+    - {fileID: 2800000, guid: 165b85500d20e4642ab02d69383d69f3, type: 3}
+    - {fileID: 2800000, guid: a89b2ec0f57aa4d4fbb16df46eb23334, type: 3}
+    - {fileID: 2800000, guid: e5aed9e51f9b60e42873152d217f4e75, type: 3}
+    - {fileID: 2800000, guid: 3a190d31828042340a3c2bcb17389f5d, type: 3}
+    - {fileID: 2800000, guid: 60dca7cc0e1838b4284e0bcc11ee3ca0, type: 3}
+    totalSpriteSurfaceArea: 3060000
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 4ebc6200885798b45a1f3231f0e43042, type: 3}
+  - {fileID: 21300000, guid: 165b85500d20e4642ab02d69383d69f3, type: 3}
+  - {fileID: 21300000, guid: 7b3e8850c3cd01a478c75ad3c9e7ab5f, type: 3}
+  - {fileID: 21300000, guid: 685484b0592e76b46b9145c01817e5a0, type: 3}
+  - {fileID: 21300000, guid: a89b2ec0f57aa4d4fbb16df46eb23334, type: 3}
+  - {fileID: 21300000, guid: 3892052155040fb419b76d306ed871c1, type: 3}
+  - {fileID: 21300000, guid: 3a190d31828042340a3c2bcb17389f5d, type: 3}
+  - {fileID: 21300000, guid: 70cb845120ef4cc47a56089390df1042, type: 3}
+  - {fileID: 21300000, guid: 4cd596825e6a48c4d8aa51c77a770ddd, type: 3}
+  - {fileID: 21300000, guid: 74d543e25b3f56246a94d57a88dce451, type: 3}
+  - {fileID: 21300000, guid: e30f16939a0f6794a8013f0e1d64e593, type: 3}
+  - {fileID: 21300000, guid: 136845d3d90b2b84ab77dbb85145df65, type: 3}
+  - {fileID: 21300000, guid: 519bd144cd35b6e49bd42b1a8cad530e, type: 3}
+  - {fileID: 21300000, guid: 0a9794444dbcff149ae090fb3b903eba, type: 3}
+  - {fileID: 21300000, guid: 1452918584772114daf5303352d405d6, type: 3}
+  - {fileID: 21300000, guid: 6c9a3b85ad9766648a3bf3643da1a08a, type: 3}
+  - {fileID: 21300000, guid: 4cb32895bb195294abcbdd48de2acb31, type: 3}
+  - {fileID: 21300000, guid: 8dee7fb592e338a429a37d56f17ffb13, type: 3}
+  - {fileID: 21300000, guid: e5aed9e51f9b60e42873152d217f4e75, type: 3}
+  - {fileID: 21300000, guid: 36a16ca674ecf6f47a7ca174a3e0b195, type: 3}
+  - {fileID: 21300000, guid: 1c256b07089784e458356e52cbab7dfb, type: 3}
+  - {fileID: 21300000, guid: 326f013822bbd664394b41484e553a66, type: 3}
+  - {fileID: 21300000, guid: deb389395143ff24fab254a096a532ec, type: 3}
+  - {fileID: 21300000, guid: 4ad9b73cb3f553b4799d8531dccedb60, type: 3}
+  - {fileID: 21300000, guid: 80aa2aacf2d917d45b758c4994536997, type: 3}
+  - {fileID: 21300000, guid: 60dca7cc0e1838b4284e0bcc11ee3ca0, type: 3}
+  - {fileID: 21300000, guid: ae0eb1fc9c67d8f4ca71346878f9c7a6, type: 3}
+  - {fileID: 21300000, guid: 73dd905dd6cd4564bb81c383cbff57c8, type: 3}
+  - {fileID: 21300000, guid: ef0a285d8c12bb644b57f8074d0afd2d, type: 3}
+  - {fileID: 21300000, guid: 5c8e558d67c1ae746ae4e33a30718444, type: 3}
+  - {fileID: 21300000, guid: a5765a9deb756064a950d63293c88665, type: 3}
+  - {fileID: 21300000, guid: 2420b51fc21fb18488bf4495d19c6721, type: 3}
+  - {fileID: 21300000, guid: a0d70a7f08edd3042b9b9cfbd8b5c88f, type: 3}
+  - {fileID: 21300000, guid: 8955c0efd19a79048b4ebcdcddb714c4, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Brian White
+  - Sarah Philips
+  - Mark Thompson
+  - Anna Jones
+  - Sharon Carter
+  - Samuel Wilson
+  - Susan Clark
+  - Jeremy Martin
+  - Daniel Davis
+  - Jason Moore
+  - Betty Scott
+  - Ronald Green
+  - Lisa Turner
+  - Ryan Cooper
+  - Kevin Walker
+  - Eric Wilson
+  - Jeff Allen
+  - Jane Williams
+  - Steve White
+  - Donna Campbell
+  - Ethan Lewis
+  - Laura Parker
+  - Jennifer Young
+  - Kenneth Jackson
+  - Margaret Thompson
+  - William Clark
+  - Catherine Miller
+  - John Smith
+  - Carol Edwards
+  - Richard Jones
+  - James Hall
+  - Christine Page
+  - Sandra Nelson
+  - Karen Collins
+  m_Tag: AvatarsAtlas
+  m_IsVariant: 0
