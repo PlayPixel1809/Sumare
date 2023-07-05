@@ -43,7 +43,7 @@ public class CasinoSumare : MonoBehaviour
 
 
         for (int i = 0; i < betTypeBtns.Count; i++) { betTypeBtns[i].interactable = true; }
-        SetSmallText("Tap on the Bet Area to place High, Middle or Low bet.");
+        SetSmallText("Tap on the Bet Area to place Low, Middle or High bet.");
         rowHighlighter.gameObject.SetActive(true);
         rowHighlighter.position = rows.GetChild(betIndex).position;
     }
@@ -53,7 +53,7 @@ public class CasinoSumare : MonoBehaviour
         AudioSource.PlayClipAtPoint(btnSound, Camera.main.transform.position, .5f);
         rowHighlighter.gameObject.SetActive(false);
 
-        if (betIndex == 0) { SetSmallText("Press '+' , '-' btns to raise or reduce the bet and BET btn to finalize the bet."); }
+        if (betIndex == 0) { SetSmallText("Press '+' , '-' Buttons to raise or reduce the bet and BET Button to finalize the bet."); }
 
         for (int i = 0; i < bettingSlots.childCount; i++)
         {

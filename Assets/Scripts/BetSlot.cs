@@ -79,10 +79,11 @@ public class BetSlot : MonoBehaviour
         {
             if (index == 0)
             {
-                if (playerCardNo > dealerCard1No && playerCardNo > dealerCard2No) 
+                if (playerCardNo < dealerCard1No && playerCardNo < dealerCard2No)
                 { yield return StartCoroutine("BetWon"); }
                 else
                 { yield return StartCoroutine("BetLost"); }
+
             }
 
             if (index == 1)
@@ -93,13 +94,14 @@ public class BetSlot : MonoBehaviour
                 { yield return StartCoroutine("BetLost"); }
             }
 
+            
+
             if (index == 2)
             {
-                if (playerCardNo < dealerCard1No && playerCardNo < dealerCard2No)
+                if (playerCardNo > dealerCard1No && playerCardNo > dealerCard2No)
                 { yield return StartCoroutine("BetWon"); }
                 else
                 { yield return StartCoroutine("BetLost"); }
-
             }
         }
 
