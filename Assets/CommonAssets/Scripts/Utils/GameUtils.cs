@@ -39,5 +39,5 @@ public class GameUtils : MonoBehaviour
         if (Time.timeSinceLevelLoad > 1) { audioSource.PlayOneShot(sound, PlayerPrefs.GetFloat("effectsVol")); }
     }
 
-    public void PlayBtnSound() { PlaySound(btnSoundDefault); }
+    public void PlayBtnSound() { AudioSource.PlayClipAtPoint(btnSoundDefault, Camera.main.transform.position); }
 }

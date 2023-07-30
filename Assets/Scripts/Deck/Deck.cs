@@ -8,15 +8,15 @@ public class Deck : MonoBehaviour
     public static Deck ins;
     void Awake() { ins = this; }
 
+    public Image coverImage;
+    public Card.CardFront cardFront;
     public Transform deckModel;
 
     public Card cardPrefab;
     public Transform cardSpawnPoint;
     public AudioClip cardSound;
 
-    public Sprite cardBack;
-    public CardFront cardFront;
-    public List<Sprite> cardsFront;
+    
 
     public Vector3 cardScale = Vector3.one;
 
@@ -25,16 +25,7 @@ public class Deck : MonoBehaviour
 
     private List<int> cardsIndexes = new List<int>();
 
-    [System.Serializable]
-    public class CardFront
-    {
-        public Font font;
-
-        public Sprite spade;
-        public Sprite heart;
-        public Sprite diamond;
-        public Sprite club;
-    }
+    
 
     private Vector3 deckScale;
     void Start()
@@ -68,5 +59,17 @@ public class Deck : MonoBehaviour
         deckModel.localScale = deckScale;
         for (int i = 0; i < cardsHolders.Count; i++) { cardsHolders[i].RemoveCards(); }
         cardsHolders.Clear();
+    }
+
+    public void SetCardBack(Sprite sprite)
+    {
+        coverImage.sprite = sprite;
+        for (int i = 0; i < cardsHolders.Count; i++)
+        {
+            for (int j = 0; j < cardsHolders[i].activeCards.Count; j++)
+            {
+                cardsHolders[i].activeCards[j].SetCardDesign(this);
+            }
+        }
     }
 }

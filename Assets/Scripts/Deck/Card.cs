@@ -18,6 +18,17 @@ public class Card : MonoBehaviour
 
     private int cardSuit = 0;
 
+    [System.Serializable]
+    public class CardFront
+    {
+        public Font font;
+
+        public Sprite spade;
+        public Sprite heart;
+        public Sprite diamond;
+        public Sprite club;
+    }
+
     public void SetCard(int cardIndex, Deck deck)
     {
         this.cardIndex = cardIndex;
@@ -38,7 +49,7 @@ public class Card : MonoBehaviour
 
     public void SetCardDesign(Deck deck)
     {
-        cardBack.sprite = deck.cardBack;
+        cardBack.sprite = deck.coverImage.sprite;
         cardNoTxt.font = deck.cardFront.font;
 
         if (cardSuit == 0)

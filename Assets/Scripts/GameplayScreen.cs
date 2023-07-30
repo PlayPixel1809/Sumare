@@ -16,10 +16,8 @@ public class GameplayScreen : MonoBehaviour
 
     void OnEnable()
     {
-        playerBalance.text = PlayerPrefs.GetInt("coins", 25000).ToString();
-
+        playerBalance.text = PlayerPrefs.GetInt("coins").ToString();
         casinoSumare.StartCoroutine("StartGame");
-
     }
 
     public void Back()
@@ -32,6 +30,12 @@ public class GameplayScreen : MonoBehaviour
                 ScreensManager.ins.ActivateScreen(gameObject, homescreen.gameObject); 
             }
         });
+
+    }
+
+    public void OpenShopBtn()
+    {
+        Shop.ins.OpenShop(false);
 
     }
 }

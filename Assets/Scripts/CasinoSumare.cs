@@ -33,6 +33,14 @@ public class CasinoSumare : MonoBehaviour
 
     public IEnumerator StartGame()
     {
+        PlayerPrefs.SetInt("gamesPlayedInThisSession", PlayerPrefs.GetInt("gamesPlayedInThisSession") + 1);
+
+        if (PlayerPrefs.GetInt("gamesPlayedInThisSession") == 6) 
+        { 
+            if (UnityAdsRewarded.ins.adLoaded) { UnityAdsRewarded.ins.Show(null); }
+            PlayerPrefs.SetInt("gamesPlayedInThisSession", 0);
+        }
+
         yield return new WaitForSeconds(1);
 
         decks[Random.Range(0, decks.Count)].CreateRandomCard(playerCards);
@@ -216,7 +224,7 @@ public class CasinoSumare : MonoBehaviour
 
     public void CreditMoneyToPlayer(int amount)
     {
-        AudioSource.PlayClipAtPoint(creditMoneySound, Camera.main.transform.position, .75f);
+        if (amount > 0) { AudioSource.PlayClipAtPoint(creditMoneySound, Camera.main.transform.position, .75f); }
         int playerBalance = int.Parse(this.playerBalance.text);
         this.playerBalance.DOCounter(playerBalance, playerBalance + amount, 1, false);
         PlayerPrefs.SetInt("coins", playerBalance + amount);
