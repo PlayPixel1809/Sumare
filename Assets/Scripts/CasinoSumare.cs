@@ -35,7 +35,7 @@ public class CasinoSumare : MonoBehaviour
     {
         PlayerPrefs.SetInt("gamesPlayedInThisSession", PlayerPrefs.GetInt("gamesPlayedInThisSession") + 1);
 
-        if (PlayerPrefs.GetInt("gamesPlayedInThisSession") == 6) 
+        if (PlayerPrefs.GetInt("gamesPlayedInThisSession") == 6 && PlayerPrefs.GetInt("adsRemoved") == 0) 
         { 
             if (UnityAdsRewarded.ins.adLoaded) { UnityAdsRewarded.ins.Show(null); }
             PlayerPrefs.SetInt("gamesPlayedInThisSession", 0);

@@ -17,6 +17,11 @@ public class GetChipsPanel : MonoBehaviour
     public AudioClip creditMoneySound;
     private Action onCloseShopPanel;
 
+    void Start()
+    {
+        
+    }
+
     void OnEnable()
     {
         playerBalance.text = PlayerPrefs.GetInt("coins").ToString();
@@ -40,9 +45,9 @@ public class GetChipsPanel : MonoBehaviour
         BuyProduct("chips1000", "Are you sure you want to purchase 1000 chips ?");
     }
 
-    public void Buy5000Chips()
+    public void Buy2500Chips()
     {
-        BuyProduct("chips5000", "Are you sure you want to purchase 5000 chips ?");
+        BuyProduct("chips2500", "Are you sure you want to purchase 2500 chips ?");
     }
 
     public void Buy10000Chips()
@@ -82,9 +87,9 @@ public class GetChipsPanel : MonoBehaviour
                         AddChips(1000);
                     }
 
-                    if (id == "chips5000")
+                    if (id == "chips2500")
                     {
-                        AddChips(5000);
+                        AddChips(2500);
                     }
 
                     if (id == "chips10000")

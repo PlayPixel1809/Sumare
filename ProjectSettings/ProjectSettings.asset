@@ -161,7 +161,7 @@ PlayerSettings:
     iPhone: 0
     tvOS: 0
   overrideDefaultApplicationIdentifier: 1
-  AndroidBundleVersionCode: 4
+  AndroidBundleVersionCode: 6
   AndroidMinSdkVersion: 22
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
@@ -273,7 +273,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 92770cdcd933e13458d47163a89680df, type: 3}
+      m_Icon: {fileID: 2800000, guid: 71d551a430e1feb4c9a610a412ee698f, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0
@@ -899,6 +899,7 @@ PlayerSettings:
     Build: 0
     Collab: 0
     Game Performance: 0
+    Legacy Analytics: 1
     Purchasing: 1
     UDP: 0
     UNet: 1
@@ -916,11 +917,11 @@ PlayerSettings:
     m_VersionName: 
   apiCompatibilityLevel: 6
   activeInputHandler: 0
-  cloudProjectId: e0cdcafc-4597-45d8-a21f-f07e97561cd9
+  cloudProjectId: 20dfc8c3-1040-40a4-b29f-c3cb0525b90f
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
   projectName: Casino Sumare
-  organizationId: the_uchiha
+  organizationId: i8already
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   playerDataPath: 

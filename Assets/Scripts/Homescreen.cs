@@ -27,12 +27,8 @@ public class Homescreen : MonoBehaviour
     {
         PlayerPrefs.SetInt("gamesPlayedInThisSession", 0);
 
-        
         if (!PlayerPrefs.HasKey("adsRemoved")) { PlayerPrefs.SetInt("adsRemoved", 0); }
-
         ScreensManager.ins.ActivateScreen(null, gameObject);
-
-        
     }
 
     void OnEnable()
@@ -116,7 +112,7 @@ public class Homescreen : MonoBehaviour
 
             Utils.InvokeDelayedAction(2, delegate { StartCoroutine("StartDailyBonusTimer"); });
         }
-        else { NoticeUtils.ins.ShowOneBtnAlert("Bonus not available, please check later"); }
+        else { NoticeUtils.ins.ShowOneBtnAlert("You collected the bonus for today , please check after some time"); }
     }
 
     IEnumerator StartDailyBonusTimer()
@@ -130,7 +126,8 @@ public class Homescreen : MonoBehaviour
         if (PlayerPrefs.GetInt("dailyBonusesCollectedCount") == 6) { dailyBonus.text = "10000"; }
 
         int bonusCollectionTime = (int)Math.Floor(DateTime.Now.Subtract(DateTime.Parse(PlayerPrefs.GetString("dailyBonusCollectedTime"))).TotalSeconds);
-        int timer = 300 - bonusCollectionTime;
+        //int timer = 300 - bonusCollectionTime; //5 mins
+        int timer = 86400 - bonusCollectionTime; //24 hours
         Debug.Log(bonusCollectionTime);
         while (timer > 0)
         {
