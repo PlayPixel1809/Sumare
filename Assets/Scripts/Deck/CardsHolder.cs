@@ -1,19 +1,37 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class CardsHolder : MonoBehaviour
 {
     public float cardAnimTime = 1;
     public bool revealCard;
-    public AnimationCurve cardAnimCurve = AnimationCurve.Linear(0, 0, 1, 1);
+
+    public Transform deckPoint;
     
     public List<Card> allCards;
 
-    [Header("Assigned During Game -")]
+    [Space(20)]
     public List<Card> activeCards = new List<Card>();
 
-    
+    public void DrawCardFromDeck(Deck deck)
+    {
+        CardInfo cardInfo = deck.GetRandomCard();
+        Card card = GetNewCard();
+        card.SetCard(cardInfo);
+
+        Vector3 cardLocalPos = card.transform.localPosition;
+        Vector3 cardLocalScale = card.transform.localScale;
+        card.transform.position = deckPoint.position;
+        card.transform.localScale = deckPoint.localScale;
+        card.transform.DOScale(cardLocalScale, cardAnimTime);
+        card.transform.DOLocalMove(cardLocalPos, cardAnimTime).OnComplete(delegate 
+        {
+            if (revealCard) { card.RevealCard(); }
+        });
+    }
+
 
     public void RevealCards()
     {
@@ -63,27 +81,24 @@ public class CardsHolder : MonoBehaviour
     {
         for (int i = 0; i < copyFrom.activeCards.Count; i++)
         {
-            if (!allCards[i].gameObject.activeSelf) { AddCard(copyFrom.activeCards[i].cardIndex, null, false); }
+            Card card = GetNewCard();
+            card.SetCard(copyFrom.activeCards[i].cardInfo);
+
+            if (revealCards) { card.RevealCard(); } 
         }
-        if (revealCards) { RevealCards(); } else { HideCards(); }
     }
 
-    public Card AddCard(int cardIndex, Deck deck, bool animate = true)
+
+    public Card GetNewCard()
     {
         for (int i = 0; i < allCards.Count; i++)
         {
-            if (!allCards[i].gameObject.activeInHierarchy)
+            if (!allCards[i].gameObject.activeSelf)
             {
                 Card inActiveCard = allCards[i];
                 inActiveCard.gameObject.SetActive(true);
-                inActiveCard.SetCard(cardIndex, deck);
-                activeCards.Add(inActiveCard);
                 inActiveCard.HideCard();
-                if (animate) { StartCoroutine(AnimateCard(inActiveCard.transform, deck)); } 
-                else 
-                {
-                    if (revealCard) { inActiveCard.RevealCard(); } 
-                }
+                activeCards.Add(inActiveCard);
                 return inActiveCard;
             }
         }
@@ -92,41 +107,5 @@ public class CardsHolder : MonoBehaviour
     }
 
 
-    IEnumerator AnimateCard(Transform card, Deck deck)
-    {
-        AudioSource.PlayClipAtPoint(Deck.ins.cardSound, Camera.main.transform.position);
-
-        Vector3 toPos = card.localPosition;
-        Quaternion toRot = card.rotation;
-
-        card.position = deck.cardSpawnPoint.position;
-        card.rotation = deck.cardSpawnPoint.rotation;
-
-        Vector3 fromPos = card.localPosition;
-        
-        Quaternion fromRot = card.rotation;
-        Vector3 fromScale = deck.cardScale;
-        Vector3 toScale = card.localScale;
-        float val = 0;
-        while (val < 1)
-        {
-            val += Time.deltaTime / cardAnimTime;
-
-            card.localPosition = Vector3.Lerp(fromPos, toPos, cardAnimCurve.Evaluate(val));
-            card.rotation = Quaternion.Lerp(fromRot, toRot, cardAnimCurve.Evaluate(val));
-            card.localScale = Vector3.Lerp(fromScale, toScale, cardAnimCurve.Evaluate(val));
-            yield return null;
-        }
-        if (revealCard) { card.GetComponent<Card>().RevealCard(); } 
-    }
-
-    public List<int> GetCardsIndexes()
-    {
-        List<int> cardsIndexes = new List<int>();
-        for (int i = 0; i < activeCards.Count; i++)
-        {
-            cardsIndexes.Add(activeCards[i].cardIndex);
-        }
-        return cardsIndexes;
-    }
+    
 }

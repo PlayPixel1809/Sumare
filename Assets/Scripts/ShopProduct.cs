@@ -77,7 +77,7 @@ public class ShopProduct : MonoBehaviour
         selectText.text = "SELECTED";
         
 
-        if (productType == Shop.ProductTypes.CardBack) { shop.deck.SetCardBack(cardBack.sprite); }
+        if (productType == Shop.ProductTypes.CardBack) { shop.deck.SetCardsBack(cardBack.sprite); }
 
         if (productType == Shop.ProductTypes.Music) 
         {

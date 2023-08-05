@@ -13,6 +13,7 @@ public class GameplayScreen : MonoBehaviour
 
     public CasinoSumare casinoSumare;
     public Homescreen homescreen;
+    public Shop shop;
 
     void OnEnable()
     {

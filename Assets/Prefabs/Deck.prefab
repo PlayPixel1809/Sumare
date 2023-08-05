@@ -35,7 +35,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 165, y: 230}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5412361665883975470
@@ -102,7 +102,7 @@ Transform:
   m_GameObject: {fileID: 8441703156943857704}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.128, y: 0.739, z: 0.196}
-  m_LocalScale: {x: 4.0147085, y: 4.0147085, z: 4.0147085}
+  m_LocalScale: {x: 1088.849, y: 1088.8489, z: 1088.8489}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8441703157644165499}
@@ -122,94 +122,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c4d8311683ee584da898d44a838ff76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardBack: {fileID: 5263775501146633531}
+  values: 
+  suits: []
+  cardTextOverrides: []
+  cardValueOverrides: []
   deckModel: {fileID: 8441703156943857705}
-  cardPrefab: {fileID: 0}
-  cardSpawnPoint: {fileID: 8441703157379907206}
   cardSound: {fileID: 8300000, guid: 72bdd368fa4418f409f9697c8a1ab110, type: 3}
-  cardBack: {fileID: 21300000, guid: c96053c69c7515041bf7bd878ab532e3, type: 3}
-  cardFront:
-    font: {fileID: 12800000, guid: 150785315ca6a4142933d4a3c6efb9a1, type: 3}
-    spade: {fileID: 21300000, guid: 491f93eab515213449383ebca855fe20, type: 3}
-    heart: {fileID: 21300000, guid: 65b9b31a8be65ec45a0d042ad4f1be66, type: 3}
-    diamond: {fileID: 21300000, guid: 3b638f262ceeea147b74b446eb61f08f, type: 3}
-    club: {fileID: 21300000, guid: 56407e930f267904c9bb221916269c94, type: 3}
-  cardsFront: []
---- !u!1 &8441703157379907201
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8441703157379907206}
-  - component: {fileID: 8441703157379907204}
-  - component: {fileID: 8441703157379907207}
-  m_Layer: 5
-  m_Name: CardSpawnPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &8441703157379907206
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8441703157379907201}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.007}
-  m_LocalScale: {x: 0.0006200001, y: 0.0006499999, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8441703157676873612}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0}
-  m_SizeDelta: {x: 165, y: 230}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &8441703157379907204
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8441703157379907201}
-  m_CullTransparentMesh: 0
---- !u!114 &8441703157379907207
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8441703157379907201}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c96053c69c7515041bf7bd878ab532e3, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  allCards: []
+  drawableCards: []
 --- !u!1 &8441703157644165498
 GameObject:
   m_ObjectHideFlags: 0
@@ -339,7 +260,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1173014185841685779}
-  - {fileID: 8441703157379907206}
   m_Father: {fileID: 8441703156943857705}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}

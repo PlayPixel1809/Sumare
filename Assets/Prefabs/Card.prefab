@@ -132,11 +132,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardBg: {fileID: 6513520640870740334}
   cardBack: {fileID: 7683078617890754740}
-  cardSuitImage: {fileID: 3762954384172237731}
-  cardNoTxt: {fileID: 815544420892884605}
+  cardSuit: {fileID: 3762954384172237731}
+  cardTxt: {fileID: 815544420892884605}
   outline: {fileID: 8345825455611128799}
-  cardIndex: 0
-  deck: {fileID: 0}
+  cardInfo:
+    cardValue: 0
+    cardText: 
+    cardSuit: {fileID: 0}
+    cardBack: {fileID: 0}
 --- !u!1 &2679975524292081467
 GameObject:
   m_ObjectHideFlags: 0

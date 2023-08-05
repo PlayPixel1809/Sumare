@@ -11,7 +11,7 @@ public class CasinoSumare : MonoBehaviour
 
     public Text playerBalance, smallText, bigText;
 
-    public List<Deck> decks;
+    public Deck deck;
 
     public CardsHolder dealerCards;
     public CardsHolder playerCards;
@@ -43,9 +43,10 @@ public class CasinoSumare : MonoBehaviour
 
         yield return new WaitForSeconds(1);
 
-        decks[Random.Range(0, decks.Count)].CreateRandomCard(playerCards);
+        playerCards.DrawCardFromDeck(deck);
+
         yield return new WaitForSeconds(1);
-        //decks[Random.Range(0, decks.Count)].CreateRandomCard(dealerCards);
+        //deck.CreateRandomCard(dealerCards);
 
         yield return new WaitForSeconds(1);
 
@@ -115,8 +116,9 @@ public class CasinoSumare : MonoBehaviour
             }
             else 
             {
-                decks[Random.Range(0, decks.Count)].CreateRandomCard(dealerCards);
-                decks[Random.Range(0, decks.Count)].CreateRandomCard(dealerCards);
+                dealerCards.DrawCardFromDeck(deck);
+                dealerCards.DrawCardFromDeck(deck);
+
                 yield return new WaitForSeconds(1);
                 StartCoroutine("ShowdownCoroutine"); 
             }
@@ -125,7 +127,7 @@ public class CasinoSumare : MonoBehaviour
 
         if (betIndex == 2)
         {
-            decks[Random.Range(0, decks.Count)].CreateRandomCard(dealerCards);
+            dealerCards.DrawCardFromDeck(deck);
             yield return new WaitForSeconds(1);
 
             if (int.Parse(this.playerBalance.text) > 0)
@@ -137,7 +139,7 @@ public class CasinoSumare : MonoBehaviour
             }
             else 
             {
-                decks[Random.Range(0, decks.Count)].CreateRandomCard(dealerCards);
+                dealerCards.DrawCardFromDeck(deck);
                 yield return new WaitForSeconds(1);
                 StartCoroutine("ShowdownCoroutine"); 
             }
@@ -145,7 +147,7 @@ public class CasinoSumare : MonoBehaviour
 
         if (betIndex == 3) 
         {
-            decks[Random.Range(0, decks.Count)].CreateRandomCard(dealerCards);
+            dealerCards.DrawCardFromDeck(deck);
             rowHighlighter.gameObject.SetActive(false);
             StartCoroutine("ShowdownCoroutine");
         }
@@ -185,14 +187,14 @@ public class CasinoSumare : MonoBehaviour
 
         if(betIndex == 1)
         {
-            decks[Random.Range(0, decks.Count)].CreateRandomCard(dealerCards);
-            decks[Random.Range(0, decks.Count)].CreateRandomCard(dealerCards);
+            dealerCards.DrawCardFromDeck(deck);
+            dealerCards.DrawCardFromDeck(deck);
             yield return new WaitForSeconds(1);
         }
 
         if (betIndex == 2)
         {
-            decks[Random.Range(0, decks.Count)].CreateRandomCard(dealerCards);
+            dealerCards.DrawCardFromDeck(deck);
             yield return new WaitForSeconds(1);
         }
 
@@ -275,7 +277,7 @@ public class CasinoSumare : MonoBehaviour
         smallText.gameObject.SetActive(false);
         bigText.gameObject.SetActive(false);
 
-        for (int i = 0; i < decks.Count; i++) { decks[i].Reset(); }
+        deck.ResetDeck(); 
 
         BetSlot[] betSlots = FindObjectsOfType<BetSlot>();
         for (int i = 0; i < betSlots.Length; i++) { betSlots[i].Deactivate(); }

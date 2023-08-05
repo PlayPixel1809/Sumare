@@ -20,7 +20,6 @@ public class MovingObject : MonoBehaviour
 
 		if (xAxisSpeed != 0)
 		{
-			Debug.Log(transform.localPosition.x);
 			if (transform.localPosition.x < xLimits.x) { transform.localPosition = new Vector3(xLimits.y, transform.localPosition.y, transform.localPosition.z); }
 			if (transform.localPosition.x > xLimits.y) { transform.localPosition = new Vector3(xLimits.x, transform.localPosition.y, transform.localPosition.z); }
 		}

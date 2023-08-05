@@ -22,6 +22,7 @@ public class Homescreen : MonoBehaviour
 
     public AudioClip creditMoneySound;
     public GameplayScreen gameplayScreen;
+    public Shop shop;
 
     void Start()
     {
@@ -76,7 +77,7 @@ public class Homescreen : MonoBehaviour
 
     public void OpenShopBtn()
     {
-        Shop.ins.OpenShop(true);
+        shop.OpenShop(true);
     }
 
     public void Exit()

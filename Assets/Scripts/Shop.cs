@@ -11,10 +11,12 @@ public class Shop : MonoBehaviour
     public static Shop ins;
     void Awake() { ins = this; }
 
+
+
     public GetChipsPanel getChipsPanel;
     public GameplayScreen gameplayScreen;
     public GameObject dimmer;
-    public RectTransform rectTransform;
+    public RectTransform shopPanel;
 
     public Transform allProducts;
     public Transform productsBtns;
@@ -33,7 +35,7 @@ public class Shop : MonoBehaviour
 
     void Start()
     {
-        rectTransform.DOAnchorPosY(-320, .00005f);
+        shopPanel.DOAnchorPosY(-1500, .00005f);
 
         cardBackProducts.GetChild(0).GetChild(0).GetChild(PlayerPrefs.GetInt("selectedCardBackIndex",0)).GetComponent<ShopProduct>().Select();
         musicProducts.GetChild(0).GetChild(0).GetChild(PlayerPrefs.GetInt("selectedMusicIndex",0)).GetComponent<ShopProduct>().Select(false);
@@ -53,15 +55,20 @@ public class Shop : MonoBehaviour
     public void OpenShop(bool showDimmer)
     {
         GameUtils.ins.PlayBtnSound();
+        shopPanel.gameObject.SetActive(true);
         dimmer.SetActive(showDimmer);
-        rectTransform.DOAnchorPosY(470, .5f);
+        shopPanel.DOAnchorPosY(-690, .5f);
     }
 
     public void CloseShop()
     {
         GameUtils.ins.PlayBtnSound();
-        rectTransform.DOAnchorPosY(-320, .5f).OnComplete( delegate { dimmer.SetActive(false); });
-
+        
+        shopPanel.DOAnchorPosY(-1500, .5f).OnComplete( delegate 
+        { 
+            dimmer.SetActive(false);
+            shopPanel.gameObject.SetActive(false);
+        });
     }
 
     public void OpenGetChipsPanel()

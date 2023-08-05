@@ -64,9 +64,9 @@ public class BetSlot : MonoBehaviour
         AudioSource.PlayClipAtPoint(CasinoSumare.ins.select, Camera.main.transform.position, .75f);
         yield return new WaitForSeconds(1);
 
-        int dealerCard1No = CasinoSumare.ins.dealerCards.GetCard(0).cardNo;
-        int dealerCard2No = CasinoSumare.ins.dealerCards.GetCard(1).cardNo;
-        int playerCardNo = CasinoSumare.ins.playerCards.GetCard(0).cardNo;
+        int dealerCard1No = CasinoSumare.ins.dealerCards.GetCard(0).cardInfo.cardValue;
+        int dealerCard2No = CasinoSumare.ins.dealerCards.GetCard(1).cardInfo.cardValue;
+        int playerCardNo = CasinoSumare.ins.playerCards.GetCard(0).cardInfo.cardValue;
 
         if (playerCardNo == dealerCard1No && playerCardNo == dealerCard2No)
         {
