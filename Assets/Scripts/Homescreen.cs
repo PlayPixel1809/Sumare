@@ -29,7 +29,7 @@ public class Homescreen : MonoBehaviour
         PlayerPrefs.SetInt("gamesPlayedInThisSession", 0);
 
         if (!PlayerPrefs.HasKey("adsRemoved")) { PlayerPrefs.SetInt("adsRemoved", 0); }
-        ScreensManager.ins.ActivateScreen(null, gameObject);
+        ScreenUtils.ActivateScreen(null, gameObject);
     }
 
     void OnEnable()
@@ -47,7 +47,7 @@ public class Homescreen : MonoBehaviour
         }
         else 
         {
-            ScreensManager.ins.ActivateScreen(gameObject, gameplayScreen.gameObject);
+            ScreenUtils.ActivateScreen(gameObject, gameplayScreen.gameObject);
         }
     }
 

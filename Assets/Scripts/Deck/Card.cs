@@ -21,7 +21,8 @@ public class Card : MonoBehaviour
 
         cardBack.sprite = cardInfo.cardBack;
         //cardNoTxt.font = deck.cardFront.font;
-        cardSuit.sprite = cardInfo.cardSuit;
+        cardSuit.sprite = cardInfo.cardSuit.suitSprite;
+        cardTxt.color = cardInfo.cardSuit.suitColor;
         cardTxt.text = cardInfo.cardText;
     }
 

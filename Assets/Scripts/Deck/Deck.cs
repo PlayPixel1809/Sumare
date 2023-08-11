@@ -9,12 +9,13 @@ public class Deck : MonoBehaviour
     void Awake() 
     { 
         ins = this;
-        CreateCards();
+        CreateCards(); 
     }
+
 
     public Image cardBack;
     public List<int> values;
-    public List<Sprite> suits;
+    public List<CardInfo.CardSuit> suits;
 
     public List<TextOverride> cardTextOverrides;
     public List<ValueOverride> cardValueOverrides;

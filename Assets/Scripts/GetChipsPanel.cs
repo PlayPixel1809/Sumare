@@ -14,6 +14,8 @@ public class GetChipsPanel : MonoBehaviour
     public Text playerBalanceHomeScreen;
     public Text playerBalanceGameplayScreen;
 
+    public InappPurchaseNotice inappPurchaseNotice;
+
     public AudioClip creditMoneySound;
     private Action onCloseShopPanel;
 
@@ -42,17 +44,17 @@ public class GetChipsPanel : MonoBehaviour
 
     public void Buy1000Chips()
     {
-        BuyProduct("chips1000", "Are you sure you want to purchase 1000 chips ?");
+        BuyProduct("chips1000", "Do you want to buy 1000 chips for $.99 ?");
     }
 
     public void Buy2500Chips()
     {
-        BuyProduct("chips2500", "Are you sure you want to purchase 2500 chips ?");
+        BuyProduct("chips2500", "Do you want to buy 2500 chips for $1.99 ?");
     }
 
     public void Buy10000Chips()
     {
-        BuyProduct("chips10000", "Are you sure you want to purchase 10000 chips ?");
+        BuyProduct("chips10000", "Do you want to buy 10000 chips for $4.99 ?");
     }
 
     public void WatchAd()
@@ -69,13 +71,13 @@ public class GetChipsPanel : MonoBehaviour
 
     public void RemoveAds()
     {
-        BuyProduct("remove_ads", "Are you sure you want to purchase Remove Ads ?");
+        BuyProduct("remove_ads", "Do you want to unlock Remove Ads for $4.99 ?");
     }
 
     void BuyProduct(string productId, string purchaseMsg)
     {
         AudioSource.PlayClipAtPoint(GameUtils.ins.btnSoundDefault, Camera.main.transform.position, .5f);
-        NoticeUtils.ins.ShowTwoBtnAlert(purchaseMsg, (i) =>
+        inappPurchaseNotice.ShowNotice(purchaseMsg, (i) =>
         {
             if (i == 0)
             {

@@ -28,7 +28,7 @@ public class GameplayScreen : MonoBehaviour
             if (i == 0) 
             {
                 CasinoSumare.ins.Reset();
-                ScreensManager.ins.ActivateScreen(gameObject, homescreen.gameObject); 
+                ScreenUtils.ActivateScreen(gameObject, homescreen.gameObject); 
             }
         });
 
