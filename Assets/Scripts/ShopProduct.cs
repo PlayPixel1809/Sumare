@@ -32,12 +32,12 @@ public class ShopProduct : MonoBehaviour
             if (int.Parse(CasinoSumare.ins.playerBalance.text) < productPrice) { NoticeUtils.ins.ShowOneBtnAlert("Your balance is low."); }
             else
             {
-                NoticeUtils.ins.ShowTwoBtnAlert("Do you wanna purchase this product ?",(i)=> 
+                NoticeUtils.ins.ShowTwoBtnAlert("Do you wanna unlock this product?",(i)=> 
                 {
                     if(i == 0)
                     {
                         CasinoSumare.ins.CreditMoneyToPlayer(-productPrice);
-                        Unlock();
+                        Select();
                     }
                 });
             }
@@ -75,14 +75,15 @@ public class ShopProduct : MonoBehaviour
         for (int i = 0; i < transform.parent.childCount; i++) { transform.parent.GetChild(i).GetComponent<ShopProduct>().Deselect(); }
         
         selectText.text = "SELECTED";
-        
+        bg.color = shop.selectedProductColor ;
+
 
         if (productType == Shop.ProductTypes.CardBack) { shop.deck.SetCardsBack(cardBack.sprite); }
 
         if (productType == Shop.ProductTypes.Music) 
         {
             if (userSelected && Homescreen.ins != null) { Homescreen.ins.Unmute(); }
-            shop.gameMusic.clip = Resources.Load<AudioClip>("Music/" + productName);
+            shop.gameMusic.clip = Resources.Load<AudioClip>(productName);
             shop.gameMusic.Play();
         }
 
@@ -101,6 +102,7 @@ public class ShopProduct : MonoBehaviour
 
     public void Deselect()
     {
+        bg.color = shop.unselectedProductColor;
         selectText.text = "SELECT";
     }
 }

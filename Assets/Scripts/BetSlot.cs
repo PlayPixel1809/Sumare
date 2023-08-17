@@ -114,11 +114,22 @@ public class BetSlot : MonoBehaviour
         CasinoSumare.ins.amountWon += int.Parse(this.betAmount.text) ;
         AudioSource.PlayClipAtPoint(CasinoSumare.ins.wonSound, Camera.main.transform.position, .3f);
         CasinoSumare.ins.SetBigText("YOU WON");
-
         betAmount.text = (int.Parse(this.betAmount.text) * 2).ToString();
-        yield return new WaitForSeconds(1);
+
+        if (CasinoSumare.ins.collectWinningsPanel == null)
+        {
+            yield return new WaitForSeconds(1);
+        }
+        else
+        {
+            CasinoSumare.ins.collectWinningsPanel.SetActive(true);
+            while (CasinoSumare.ins.collectWinningsPanel.activeInHierarchy) { yield return null; }
+        }
+        
         CasinoSumare.ins.CreditMoneyToPlayer(int.Parse(betAmount.text));
         betAmount.DOCounter(int.Parse(betAmount.text), 0, 1, false);
+        CasinoSumare.ins.onBetWon?.Invoke(int.Parse(betAmount.text));
+
         yield return new WaitForSeconds(1);
         CasinoSumare.ins.SetBigText("");
         yield return new WaitForSeconds(1);

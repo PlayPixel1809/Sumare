@@ -11,7 +11,8 @@ public class Shop : MonoBehaviour
     public static Shop ins;
     void Awake() { ins = this; }
 
-
+    public Color selectedProductColor;
+    public Color unselectedProductColor;
 
     public GetChipsPanel getChipsPanel;
     public GameplayScreen gameplayScreen;

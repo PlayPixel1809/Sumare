@@ -129,7 +129,6 @@ public class Homescreen : MonoBehaviour
         int bonusCollectionTime = (int)Math.Floor(DateTime.Now.Subtract(DateTime.Parse(PlayerPrefs.GetString("dailyBonusCollectedTime"))).TotalSeconds);
         //int timer = 300 - bonusCollectionTime; //5 mins
         int timer = 86400 - bonusCollectionTime; //24 hours
-        Debug.Log(bonusCollectionTime);
         while (timer > 0)
         {
             TimeSpan t = TimeSpan.FromSeconds(timer);

@@ -1,4 +1,5 @@
 using DG.Tweening;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,16 +21,19 @@ public class CasinoSumare : MonoBehaviour
     public List<Button> betBtns;
     public Button betSkipBtn;
 
+    public GameObject collectWinningsPanel;
     public Transform bettingSlots, rows, rowHighlighter;
     public AudioClip btnSound, creditMoneySound, wonSound, lostSound, select, netGain;
 
     public int amountWon;
 
+    public Action<int> onBetWon;
+
     private List<BetSlot> betsMade = new List<BetSlot>();
     private int betIndex;
     private BetSlot activeBetSlot;
-    
 
+    
 
     public IEnumerator StartGame()
     {
@@ -282,4 +286,6 @@ public class CasinoSumare : MonoBehaviour
         BetSlot[] betSlots = FindObjectsOfType<BetSlot>();
         for (int i = 0; i < betSlots.Length; i++) { betSlots[i].Deactivate(); }
     }
+
+    
 }

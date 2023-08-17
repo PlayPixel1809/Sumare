@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: i8already
-  productName: Casino Sumare
+  productName: Educational Sumare
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -156,6 +156,7 @@ PlayerSettings:
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
     Android: com.i8already.casinosumare
+    iPhone: com.i8already.educationalsumare
   buildNumber:
     Standalone: 0
     iPhone: 0
@@ -230,7 +231,7 @@ PlayerSettings:
   tvOSManualSigningProvisioningProfileID: 
   iOSManualSigningProvisioningProfileType: 0
   tvOSManualSigningProvisioningProfileType: 0
-  appleEnableAutomaticSigning: 0
+  appleEnableAutomaticSigning: 1
   iOSRequireARKit: 0
   iOSAutomaticallyDetectAndAddCapabilities: 1
   appleEnableProMotion: 0
@@ -273,7 +274,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 71d551a430e1feb4c9a610a412ee698f, type: 3}
+      m_Icon: {fileID: 2800000, guid: 700e974bada805b40814ce9d338866bf, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0
@@ -917,11 +918,11 @@ PlayerSettings:
     m_VersionName: 
   apiCompatibilityLevel: 6
   activeInputHandler: 0
-  cloudProjectId: 20dfc8c3-1040-40a4-b29f-c3cb0525b90f
+  cloudProjectId: 31f923ac-4a08-43d8-b4c4-8db283a249b6
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: Casino Sumare
-  organizationId: i8already
+  projectName: Educational Sumare
+  organizationId: rajmehtawork
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   playerDataPath: 
