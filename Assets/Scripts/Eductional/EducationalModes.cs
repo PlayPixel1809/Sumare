@@ -1,4 +1,5 @@
 using DG.Tweening;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,7 +8,11 @@ using UnityEngine.UI;
 public class EducationalModes : MonoBehaviour
 {
     public static EducationalModes ins;
-    void Awake() { ins = this; }
+    void Awake() 
+    { 
+        ins = this;
+        if (!PlayerPrefs.HasKey("selectedEducationalMode")) { PlayerPrefs.SetString("selectedEducationalMode", "BasicNumbers"); }
+    }
 
     public enum Modes { BasicNumbers, EvenNumbers , OddNumbers , NegativeNumbers, DivisibleBy, Range, RangeAndDivisibleBy}
 
@@ -22,12 +27,11 @@ public class EducationalModes : MonoBehaviour
     public Sprite unselected;
 
     public Transform modesBtns;
-    
+
+    public Action<EducatiopnalModeBtn> onEducationalModeSelect;
 
     void Start()
     {
-        if (!PlayerPrefs.HasKey("selectedEducationalMode")) { PlayerPrefs.SetString("selectedEducationalMode", "BasicNumbers"); }
-
         for (int i = 0; i < modesBtns.childCount; i++)
         {
             EducatiopnalModeBtn educatiopnalModeBtn = modesBtns.GetChild(i).GetComponent<EducatiopnalModeBtn>();
@@ -61,7 +65,8 @@ public class EducationalModes : MonoBehaviour
         List<int> numbers = new List<int>();
         for (int i = lowerLimit; i < upperLimit; i++) 
         {
-            if (i != 0 && i %divisibleBy == 0) { numbers.Insert(Random.Range(0, numbers.Count), i); }
+            if (i == 0 || i == 1000 || i == -1000) { continue; }
+            if (i % divisibleBy == 0) { numbers.Insert(UnityEngine.Random.Range(0, numbers.Count), i); }
         }
 
         if (maxCards > numbers.Count) { maxCards = numbers.Count; }

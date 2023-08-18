@@ -95,6 +95,8 @@ public class EducatiopnalModeBtn : MonoBehaviour
             int no = PlayerPrefs.GetInt(mode.ToString() + "ModeSelectedDivisibleBy");
             EducationalModes.ins.GenerateCardsAccordingToRange(lowerVal, upperVal, no, 50, 1, "Range & Divisible By", "( " + lowerVal + " to " + upperVal + " ) / " + no);
         }
+
+        EducationalModes.ins.onEducationalModeSelect?.Invoke(this);
     }
 
     public void Deselect()

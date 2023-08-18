@@ -21,7 +21,7 @@ public class CasinoSumare : MonoBehaviour
     public List<Button> betBtns;
     public Button betSkipBtn;
 
-    public GameObject collectWinningsPanel;
+    public GameObject collectWinningsPanel, collectTrophyPanel;
     public Transform bettingSlots, rows, rowHighlighter;
     public AudioClip btnSound, creditMoneySound, wonSound, lostSound, select, netGain;
 

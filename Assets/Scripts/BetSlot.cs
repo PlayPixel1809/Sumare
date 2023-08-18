@@ -116,10 +116,7 @@ public class BetSlot : MonoBehaviour
         CasinoSumare.ins.SetBigText("YOU WON");
         betAmount.text = (int.Parse(this.betAmount.text) * 2).ToString();
 
-        if (CasinoSumare.ins.collectWinningsPanel == null)
-        {
-            yield return new WaitForSeconds(1);
-        }
+        if (CasinoSumare.ins.collectWinningsPanel == null) { yield return new WaitForSeconds(1); }
         else
         {
             CasinoSumare.ins.collectWinningsPanel.SetActive(true);
@@ -129,8 +126,16 @@ public class BetSlot : MonoBehaviour
         CasinoSumare.ins.CreditMoneyToPlayer(int.Parse(betAmount.text));
         betAmount.DOCounter(int.Parse(betAmount.text), 0, 1, false);
         CasinoSumare.ins.onBetWon?.Invoke(int.Parse(betAmount.text));
-
         yield return new WaitForSeconds(1);
+
+        yield return new WaitForEndOfFrame();
+
+        if (CasinoSumare.ins.collectTrophyPanel != null && CasinoSumare.ins.collectTrophyPanel.activeInHierarchy)
+        {
+            while (CasinoSumare.ins.collectTrophyPanel.activeInHierarchy) { yield return null; }
+            yield return new WaitForSeconds(.5f);
+        }
+
         CasinoSumare.ins.SetBigText("");
         yield return new WaitForSeconds(1);
     }

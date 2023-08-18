@@ -113,7 +113,7 @@ public class Homescreen : MonoBehaviour
 
             Utils.InvokeDelayedAction(2, delegate { StartCoroutine("StartDailyBonusTimer"); });
         }
-        else { NoticeUtils.ins.ShowOneBtnAlert("You collected the bonus for today , please check after some time"); }
+        else { NoticeUtils.ins.ShowOneBtnAlert("You collected the bonus for today, please check after some time"); }
     }
 
     IEnumerator StartDailyBonusTimer()
